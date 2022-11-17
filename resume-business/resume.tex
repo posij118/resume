@@ -1,0 +1,63 @@
+\documentclass[11pt]{article}
+
+\usepackage{../components/commonheader}
+
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+
+%\fancyhead[L]{}
+%\fancyhead[C]{\subimport{../components/}{background.tex}}
+%\fancyhead[R]{}
+%\setlength{\headheight}{75.54584pt}
+
+\begin{document}
+
+\newif\ifczech
+\czechfalse
+\newif\ifskillsold
+\skillsoldfalse
+
+\subimport{../components/}{background.tex}
+
+\resumesection{\emoji{books} \ifczech Vzdělání \else Education \fi}
+
+\subimport{../components/education}{hkust.tex}
+
+\subimport{../components/education}{matfyz.tex}
+
+
+\resumesection{\emoji{trophy} \ifczech Ocenění \else Awards \fi}
+
+\subimport{../components/awards/}{awards-business.tex}
+
+\resumesection{\emoji{briefcase} \ifczech Pracovní zkušenosti \else Work Experience \fi}
+
+\subimport{../components/experiences/}{jane-street.tex}
+
+\newpage
+\subimport{../components/}{background.tex}
+
+\resumesection{\emoji{hand-with-fingers-splayed} \ifczech Dovednosti \else Skills \fi}
+
+\ifskillsold
+\subimport{../components/}{skills_old.tex}
+\else
+\subimport{../components/}{skills.tex}
+\fi
+
+\resumesection{\emoji{earth-africa} \ifczech Jazyky \else Languages \fi}
+
+\subimport{../components/}{language.tex}
+
+\resumesection{\emoji{hotel} \ifczech Účast na konferencích \else  Conference participation \fi}
+
+\subimport{../components/conference}{conference.tex}
+%\resumesection{\emoji{man-teacher} Teaching} 
+% Possibly add this section?
+
+\resumesection{\emoji{dollar-banknote} \ifczech Stipendia \else Fellowships and Stipends \fi}
+
+\subimport{../components/stipend}{stipends.tex}
+
+
+\end{document}
